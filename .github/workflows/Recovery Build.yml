@@ -108,7 +108,7 @@ jobs:
           
     - name: Repo Sync
       run: |
-        repo sync -j$(nproc --all) --force-sync -c --no-clone-bundle --no-tags
+        repo sync -j$(nproc --all) --force-sync -c --no-clone-bundle --no-tags && git clone --depth=1 -b split-for-rebase https://github.com/mvaisakh/nabu.git kernel/xiaomi/nabu
       working-directory: workspace
       
     - name: Clone device tree
